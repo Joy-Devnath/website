@@ -62,6 +62,7 @@
             padding: 10px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
         .product img {
@@ -79,6 +80,51 @@
             color: #f57224;
             font-size: 18px;
             font-weight: bold;
+        }
+
+        /* প্রোডাক্ট ডিটেলস স্টাইল */
+        .product-details {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Initially hidden */
+        }
+
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-details h2 {
+            color: #333;
+        }
+
+        .product-details p {
+            color: #666;
+        }
+
+        .product-details .price {
+            color: #f57224;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .order-button {
+            background-color: #f57224;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .order-button:hover {
+            background-color: #e5611a;
         }
 
         /* ফুটার স্টাইল */
@@ -102,34 +148,73 @@
 
     <!-- নেভিগেশন মেনু -->
     <nav>
-        <a href="#">হোম</a>
+        <a href="#" onclick="showHomePage()">হোম</a>
         <a href="#">প্রোডাক্ট</a>
         <a href="#">অফার</a>
         <a href="#">যোগাযোগ</a>
     </nav>
 
-    <!-- প্রোডাক্ট সেকশন -->
-    <div class="products">
-        <div class="product" onclick="window.location.href='product1.html'">
-            <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ১">
-            <h3>প্রোডাক্ট ১</h3>
-            <p>৳১০০</p>
+    <!-- হোমপেজ প্রোডাক্ট সেকশন -->
+    <div id="home-page">
+        <div class="products">
+            <div class="product" onclick="showProductDetails('product1')">
+                <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ১">
+                <h3>প্রোডাক্ট ১</h3>
+                <p>৳১০০</p>
+            </div>
+            <div class="product" onclick="showProductDetails('product2')">
+                <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ২">
+                <h3>প্রোডাক্ট ২</h3>
+                <p>৳২০০</p>
+            </div>
+            <div class="product" onclick="showProductDetails('product3')">
+                <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ৩">
+                <h3>প্রোডাক্ট ৩</h3>
+                <p>৳৩০০</p>
+            </div>
+            <div class="product" onclick="showProductDetails('product4')">
+                <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ৪">
+                <h3>প্রোডাক্ট ৪</h3>
+                <p>৳৪০০</p>
+            </div>
         </div>
-        <div class="product" onclick="window.location.href='product2.html'">
-            <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ২">
-            <h3>প্রোডাক্ট ২</h3>
-            <p>৳২০০</p>
-        </div>
-        <div class="product" onclick="window.location.href='product3.html'">
-            <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ৩">
-            <h3>প্রোডাক্ট ৩</h3>
-            <p>৳৩০০</p>
-        </div>
-        <div class="product" onclick="window.location.href='product4.html'">
-            <img src="https://via.placeholder.com/150" alt="প্রোডাক্ট ৪">
-            <h3>প্রোডাক্ট ৪</h3>
-            <p>৳৪০০</p>
-        </div>
+    </div>
+
+    <!-- প্রোডাক্ট ডিটেলস পেজ -->
+    <div id="product1" class="product-details">
+        <img src="https://via.placeholder.com/400" alt="প্রোডাক্ট ১">
+        <h2>প্রোডাক্ট ১</h2>
+        <p>এই প্রোডাক্টটি খুবই উন্নত মানের এবং টেকসই।</p>
+        <p class="price">৳১০০</p>
+        <p>ডেলিভারি চার্জ: ৳৫০</p>
+        <button class="order-button">অর্ডার করুন</button>
+    </div>
+
+    <div id="product2" class="product-details">
+        <img src="https://via.placeholder.com/400" alt="প্রোডাক্ট ২">
+        <h2>প্রোডাক্ট ২</h2>
+        <p>এই প্রোডাক্টটি খুবই উন্নত মানের এবং টেকসই।</p>
+        <p class="price">৳২০০</p>
+        <p>ডেলিভারি চার্জ: ৳৫০</p>
+        <button class="order-button">অর্ডার করুন</button>
+    </div>
+
+    <div id="product3" class="product-details">
+        <img src="https://via.placeholder.com/400" alt="প্রোডাক্ট ৩">
+        <h2>প্রোডাক্ট ৩</h2>
+        <p>এই প্রোডাক্টটি খুবই উন্নত মানের এবং টেকসই।</p>
+        <p class="price">৳৩০০</p>
+        <p>ডেলিভারি চার্জ: ৳৫০</p>
+        <button class="order-button">অর্ডার করুন</button>
+    </div>
+
+    <div id="product4" class="product-details">
+        <img src="https://via.placeholder.com/400" alt="প্রোডাক্ট ৪">
+        <h2>প্রোডাক্ট ৪</h2>
+        <p>এই প্রোডাক্টটি খুবই উন্নত মানের এবং টেকসই।</p>
+        <p class="price">৳৪০০</p>
+        <p>ডেলিভারি চার্জ: ৳৫০</p>
+        <button class="order-button">অর্ডার করুন</button>
     </div>
 
     <!-- ফুটার -->
@@ -137,5 +222,30 @@
         <p>&copy; ২০২৩ দারাজ - অনলাইন শপিং</p>
     </footer>
 
+    <script>
+        // হোমপেজ দেখানোর ফাংশন
+        function showHomePage() {
+            document.getElementById('home-page').style.display = 'block';
+            hideAllProductDetails();
+        }
+
+        // প্রোডাক্ট ডিটেলস দেখানোর ফাংশন
+        function showProductDetails(productId) {
+            document.getElementById('home-page').style.display = 'none';
+            hideAllProductDetails();
+            document.getElementById(productId).style.display = 'block';
+        }
+
+        // সব প্রোডাক্ট ডিটেলস লুকানোর ফাংশন
+        function hideAllProductDetails() {
+            const productDetails = document.querySelectorAll('.product-details');
+            productDetails.forEach(product => {
+                product.style.display = 'none';
+            });
+        }
+
+        // প্রথমে হোমপেজ দেখানো
+        showHomePage();
+    </script>
 </body>
 </html>
